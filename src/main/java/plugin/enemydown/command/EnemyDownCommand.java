@@ -65,7 +65,7 @@ public class EnemyDownCommand extends BaseCommand implements Listener {
           Statement statement = con.createStatement();
           ResultSet resultSet = statement.executeQuery("SELECT * FROM player_score;")) {
 
-        player.sendMessage("Database query executed");
+        System.out.println("データベースに接続成功しました。");
 
         while (resultSet.next()) {
           int id = resultSet.getInt("id");
