@@ -53,10 +53,10 @@ public class EnemyDownCommand extends BaseCommand implements Listener {
 
   @Override
   public boolean onExecutePlayerCommand(Player player, Command command, String s, String[] strings) {
-    player.sendMessage("Command received: " + s + ", args: " + String.join(", ", strings));
+    System.out.println("Command received: " + s + ", args: " + String.join(", ", strings));
 
     if (strings.length == 1 && LIST.equals(strings[0])) {
-      player.sendMessage("List command recognized");
+      System.out.println("スタート");
 
       try (Connection con = DriverManager.getConnection(
           "jdbc:mysql://localhost:3306/spigot_server",
@@ -80,10 +80,12 @@ public class EnemyDownCommand extends BaseCommand implements Listener {
         }
       } catch (SQLException e) {
         e.printStackTrace();
-        player.sendMessage(ChatColor.RED + "An error occurred while accessing the database: " + e.getMessage());
       }
       return false;
     }
+
+    System.out.println("コードが終了しました。");
+
     String difficulty = getDifficulty(player, strings);
     if (difficulty.equals(NONE)) {
       return false;
