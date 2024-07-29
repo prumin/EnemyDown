@@ -26,7 +26,7 @@ public abstract class BaseCommand implements CommandExecutor {
    * @param command コマンド
    * @param  s ラベル
    * @param  strings　コマンド引数
-   * @return　処理の実行有無
+   * @return 処理の実行有無
    */
   public abstract boolean onExecutePlayerCommand(Player player, Command command, String s, String[] strings);
 
@@ -37,7 +37,7 @@ public abstract class BaseCommand implements CommandExecutor {
    * @param command コマンド
    * @param  s ラベル
    * @param  strings　コマンド引数
-   * @return　処理の実行有無
+   * @return 処理の実行有無
    */
   public abstract boolean onExecuteNPCCommand(CommandSender commandSender, Command command, String s, String[] strings);
 }
